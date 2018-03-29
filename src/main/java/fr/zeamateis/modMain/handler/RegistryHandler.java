@@ -12,9 +12,9 @@ import net.minecraftforge.fml.common.registry.EntityEntry;
 @EventBusSubscriber(modid = ExampleModMain.MODID)
 public class RegistryHandler
 {
-
     private static ItemsHandler  itemsHandler;
     private static BlocksHandler blocksHandler;
+
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -25,7 +25,6 @@ public class RegistryHandler
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         itemsHandler = new ItemsHandler(event);
-
     }
 
     @SubscribeEvent
@@ -38,5 +37,4 @@ public class RegistryHandler
         ExampleModMain.getProxy().bindTESR();
         ExampleModMain.getProxy().bindEntityRenderer();
     }
-
 }

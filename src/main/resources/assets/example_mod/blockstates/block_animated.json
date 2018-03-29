@@ -1,0 +1,5 @@
+{
+   "variants": {
+       "normal": { "model": "example_mod:block_animated" }
+   }
+}

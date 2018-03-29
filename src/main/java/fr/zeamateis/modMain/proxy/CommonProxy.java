@@ -1,4 +1,4 @@
-package fr.zeamateis.example.blocks.proxy;
+package fr.zeamateis.modMain.proxy;
 
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;

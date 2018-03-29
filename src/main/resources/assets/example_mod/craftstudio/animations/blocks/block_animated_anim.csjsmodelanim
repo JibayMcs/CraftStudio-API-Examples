@@ -1,0 +1,52 @@
+{
+  "title": "TestHat",
+  "duration": 80,
+  "holdLastKeyframe": false,
+  "nodeAnimations": {
+    "Hat6": {
+      "position": {
+      },
+      "offsetFromPivot": {
+      },
+      "size": {
+      },
+      "rotation": {
+        "0": [ 0, 0, 0 ],
+        "20": [ 0, 0, 24.54 ],
+        "60": [ 0, 0, -24.54 ]
+      },
+      "stretch": {
+      }
+    },
+    "Hat7": {
+      "position": {
+      },
+      "offsetFromPivot": {
+      },
+      "size": {
+      },
+      "rotation": {
+        "0": [ 0, 0, 0 ],
+        "20": [ 0, 0, 32.71 ],
+        "60": [ 0, 0, -32.71 ]
+      },
+      "stretch": {
+      }
+    },
+    "Hat8": {
+      "position": {
+      },
+      "offsetFromPivot": {
+      },
+      "size": {
+      },
+      "rotation": {
+        "0": [ 0, 0, 0 ],
+        "20": [ 0, 0, 36.24 ],
+        "60": [ 0, 0, -36.24 ]
+      },
+      "stretch": {
+      }
+    }
+  }
+}

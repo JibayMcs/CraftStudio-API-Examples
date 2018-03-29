@@ -27,17 +27,17 @@ public class RenderAnimatedBlock<T extends TileEntityBlockAnimated> extends Tile
     /** The model of the block. */
     protected ModelCraftStudio model;
     /** The texture of the block */
-    protected ResourceLocation texture = new ResourceLocation(ExampleModMain.MODID, "textures/blocks/block_animated.png");
+    protected ResourceLocation texture = new ResourceLocation(ExampleModMain.MODID, "textures/example.png");
 
     /** The constructor that initialize the model and save texture. */
     public RenderAnimatedBlock() {
-        this.model = new ModelCraftStudio(ExampleModMain.MODID, "block_animated", 32);
+        this.model = new ModelCraftStudio(ExampleModMain.MODID, "block_animated", 64);
     }
 
     @Override
     public void render(T tile, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         GlStateManager.pushMatrix();
-        GlStateManager.translate(x + 0.5, y + 0.55, z + 0.5);
+        GlStateManager.translate(x + 0.5, y - 0.4370, z + 0.5);
         GlStateManager.multMatrix(CSTileEntitySpecialRenderer.ROTATION_CORRECTOR);
         GlStateManager.color(1.0F, 1.0F, 1.0F);
         bindTexture(this.texture);
