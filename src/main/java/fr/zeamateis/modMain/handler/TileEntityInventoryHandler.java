@@ -7,6 +7,9 @@ import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 
+/**
+ * The most important class to create a perfect render of a TESR Block, with an inventory renderer
+ * */
 public class TileEntityInventoryHandler extends TileEntityItemStackRenderer
 {
     
@@ -18,6 +21,7 @@ public class TileEntityInventoryHandler extends TileEntityItemStackRenderer
 
         switch (block) {
             case "block_animated":
+            	//Call the render method of the TileEntity to override the renderByItem method
                 this.render(tile_entity_block_animated);
                 break;
             default:

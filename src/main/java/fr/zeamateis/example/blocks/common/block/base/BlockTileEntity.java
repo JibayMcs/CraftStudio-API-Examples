@@ -11,40 +11,34 @@ import net.minecraft.world.ChunkCache;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.chunk.Chunk;
 
+/**
+ * A simple base class for Animated(or not) Blocks (with a TileEntity) made on CraftStudio
+ * */
 public abstract class BlockTileEntity<T extends BaseTileEntity> extends BlockContainer
 {
     public String    name;
-    private Class<T> tileClass;
 
-    public BlockTileEntity(final String name, final Material material, Class<T> tileClass) {
+    public BlockTileEntity(final String name, final Material material) {
         super(material);
         this.name = name;
         this.setRegistryName(ExampleModMain.MODID, name);
         this.setUnlocalizedName(name);
         this.setCreativeTab(CreativeTabs.DECORATIONS);
-        this.tileClass = tileClass;
     }
 
+    /**
+     * The type of render function called. MODEL for mixed tesr and static model, MODELBLOCK_ANIMATED for TESR-only,
+     * LIQUID for vanilla liquids, INVISIBLE to skip all rendering
+     */
     @Override
     public EnumBlockRenderType getRenderType(final IBlockState state) {
         return EnumBlockRenderType.MODEL;
     }
-
-    public T getWorldTile(IBlockAccess world, BlockPos pos) {
-        if (world instanceof ChunkCache)
-            return (T) ((ChunkCache) world).getTileEntity(pos, Chunk.EnumCreateEntityType.CHECK);
-        else
-            return (T) world.getTileEntity(pos);
-    }
-
-    public boolean checkWorldTile(IBlockAccess world, BlockPos pos) {
-        if (world instanceof ChunkCache)
-            return tileClass.isInstance(((ChunkCache) world).getTileEntity(pos, Chunk.EnumCreateEntityType.CHECK));
-        else
-            return tileClass.isInstance(world.getTileEntity(pos));
-    }
-
-    public Class<T> getTileClass() {
-        return tileClass;
+    
+    /**
+     * Used to determine ambient occlusion and culling when rebuilding chunks for render
+     */
+    public boolean isOpaqueCube(IBlockState state) {
+        return false;
     }
 }

@@ -12,10 +12,11 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+/**
+ * A simple base class for Animated Blocks (TileEntity) with CraftStudio
+ * */
 public class BaseTileEntity extends AnimatedTileEntity
 {
-    protected Random rand = new Random();
-
     public BaseTileEntity() {}
 
     @Override
@@ -30,22 +31,13 @@ public class BaseTileEntity extends AnimatedTileEntity
         readFromNBT(packet.getNbtCompound());
     }
 
-    public boolean isServer() {
-        if (world != null)
-            return !world.isRemote;
-        return FMLCommonHandler.instance().getEffectiveSide().isServer();
-    }
-
-    public boolean isClient() {
-        if (world != null)
-            return world.isRemote;
-        return FMLCommonHandler.instance().getEffectiveSide().isClient();
-    }
-
+    /*
+     * Not sure if it's really working.
+     * It's for extend the render distance of a >1x1 block.
+     * */
     @Override
     @SideOnly(Side.CLIENT)
     public AxisAlignedBB getRenderBoundingBox() {
         return new AxisAlignedBB(pos, pos.add(5, 5, 5));
-
     }
 }

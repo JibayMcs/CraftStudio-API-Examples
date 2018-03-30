@@ -22,6 +22,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+
+/**This class is an... helper... for a more easy way in registration*/
 public class RegistryHelper
 {
 

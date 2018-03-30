@@ -22,6 +22,7 @@ public class ClientProxy extends CommonProxy
 
     @Override
     public void init(FMLInitializationEvent event) {
+    	//Instanciate the Render Inventory class
         TileEntityItemStackRenderer.instance = new TileEntityInventoryHandler();
     }
 
@@ -36,6 +37,9 @@ public class ClientProxy extends CommonProxy
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityBlockAnimated.class, new RenderAnimatedBlock<>());
     }
 
+    /**
+     * Register all CraftStudio assets for you project (animations, entity model, block model)
+     */
     @CraftStudioLoader
     public static void registerCraftStudioAssets() {
         CSRegistryHelper registry = new CSRegistryHelper(ExampleModMain.MODID);
